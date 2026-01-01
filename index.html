@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Birthday Noor Fatima 🌟</title>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 50%, #f093fb 100%);
+            min-height: 100vh;
+            overflow-x: hidden;
+            position: relative;
+        }
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><radialGradient id="g" cx="50%" cy="50%"><stop offset="0%" stop-color="%23fff" stop-opacity="0.1"/><stop offset="100%" stop-color="%23fff" stop-opacity="0"/></radialGradient></defs><circle cx="20" cy="20" r="2" fill="url(%23g)"><animate attributeName="cy" values="20;80;20" dur="3s" repeatCount="indefinite"/></circle><circle cx="80" cy="80" r="2" fill="url(%23g)"><animate attributeName="cy" values="80;20;80" dur="4s" repeatCount="indefinite"/></circle><circle cx="50" cy="10" r="1.5" fill="url(%23g)"><animate attributeName="cy" values="10;90;10" dur="5s" repeatCount="indefinite"/></circle></svg>') repeat;
+            z-index: 1;
+            pointer-events: none;
+        }
+        .container { max-width: 800px; margin: 0 auto; padding: 20px; position: relative; z-index: 2; }
+        h1 {
+            font-family: 'Dancing Script', cursive;
+            font-size: 3.5em;
+            text-align: center;
+            color: #fff;
+            text-shadow: 0 0 20px rgba(255,215,0,0.6);
+            margin-bottom: 10px;
+            animation: glow 2s ease-in-out infinite alternate;
+        }
+        @keyframes glow { from { text-shadow: 0 0 20px rgba(255,215,0,0.6); } to { text-shadow: 0 0 30px rgba(255,215,0,0.9), 0 0 40px rgba(255,215,0,0.5); } }
+        .subtitle { font-size: 1.4em; text-align: center; color: #f0f8ff; margin-bottom: 40px; }
+        .countdown {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+            gap: 20px;
+            margin-bottom: 50px;
+        }
+        .count-item {
+            background: rgba(255,255,255,0.1);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            padding: 20px;
+            text-align: center;
+            box-shadow: 0 8px 32px rgba(0,0,0,0.2);
+            border: 1px solid rgba(255,255,255,0.2);
+            transition: transform 0.3s;
+        }
+        .count-item:hover { transform: scale(1.05); }
+        .count-num { font-size: 2.5em; font-weight: 700; background: linear-gradient(45deg, #ffd700, #ffed4e); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        .count-label { color: #fff; font-size: 0.9em; text-transform: uppercase; letter-spacing: 1px; }
+        .wishes {
+            background: rgba(255,255,255,0.15);
+            backdrop-filter: blur(15px);
+            border-radius: 25px;
+            padding: 30px;
+            margin-top: 30px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.3);
+            border: 1px solid rgba(255,255,255,0.3);
+        }
+        .wishes h2 {
+            font-family: 'Dancing Script', cursive;
+            font-size: 2.5em;
+            text-align: center;
+            color: #ffd700;
+            margin-bottom: 20px;
+        }
+        .wish-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 15px;
+            list-style: none;
+        }
+        .wish-item {
+            background: rgba(255,255,255,0.1);
+            padding: 15px 20px;
+            border-radius: 15px;
+            color: #fff;
+            font-style: italic;
+            animation: fadeInUp 0.5s ease forwards;
+            opacity: 0;
+            transform: translateY(20px);
+            border-left: 4px solid #ffd700;
+        }
+        .wish-item:nth-child(1) { animation-delay: 0.1s; }
+        .wish-item:nth-child(2) { animation-delay: 0.2s; }
+        .wish-item:nth-child(3) { animation-delay: 0.3s; }
+        /* Add more delays for others */
+        @keyframes fadeInUp { to { opacity: 1; transform: translateY(0); } }
+        .heart { position: fixed; top: 20px; right: 20px; font-size: 2em; color: #ff69b4; animation: float 3s ease-in-out infinite; z-index: 3; }
+        @keyframes float { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-10px); } }
+        @media (max-width: 600px) { h1 { font-size: 2.5em; } .countdown { grid-template-columns: repeat(2, 1fr); } }
+    </style>
+</head>
+<body>
+    <div class="heart"><i class="fas fa-heart"></i></div>
+    <div class="container">
+        <h1>Noor Fatima</h1>
+        <p class="subtitle">Your special day is coming! May Allah fill it with barakah and joy 🌸</p>
+        
+        <div class="countdown" id="countdown">
+            <div class="count-item"><div class="count-num" id="days">00</div><div class="count-label">Days</div></div>
+            <div class="count-item"><div class="count-num" id="hours">00</div><div class="count-label">Hours</div></div>
+            <div class="count-item"><div class="count-num" id="minutes">00</div><div class="count-label">Minutes</div></div>
+            <div class="count-item"><div class="count-num" id="seconds">00</div><div class="count-label">Seconds</div></div>
+        </div>
+
+        <div class="wishes">
+            <h2><i class="fas fa-prayer-rug"></i> Duas & Well Wishes for You</h2>
+            <ul class="wish-list">
+                <li class="wish-item">May Allah bless you with barakah, peace, and happiness today [web:1].</li>
+                <li class="wish-item">Allahumma barik laha fi umriha - O Allah, bless her in her age [page:1].</li>
+                <li class="wish-item">May Allah grant you peace, health, and heartfelt joy [web:1].</li>
+                <li class="wish-item">May your heart stay filled with iman and pure light [web:1].</li>
+                <li class="wish-item">Barakah and noor surround you every step you take [web:1].</li>
+                <li class="wish-item">May Allah protect your heart, mind, and soul forever [page:2].</li>
+                <li class="wish-item">Allahumma ahfitha min bayni yadayha wa min khalfiha - O Allah, protect her from front and behind [page:1].</li>
+                <li class="wish-item">May Allah increase you in imaan, knowledge, and sincerity [page:1].</li>
+                <li class="wish-item">Ya Allah, make this year a year of piety and worship for her [page:1].</li>
+                <li class="wish-item">May Allah shower mercy, love, and peace upon your life [web:1].</li>
+                <li class="wish-item">Allahumma ighfir laha dhunuba ma taqaddama minha wa ma ta'akhkhara - Forgive her past and future sins [page:1].</li>
+                <li class="wish-item">May your life be filled with halal rizq and barakah [page:1].</li>
+                <li class="wish-item">Live every moment with faith, love, and sincere gratitude [web:1].</li>
+                <li class="wish-item">May Allah keep you firm on the Straight Path [page:1].</li>
+                <li class="wish-item">Joy comes from remembering Allah on this blessed day [web:1].</li>
+                <li class="wish-item">May Allah grant you 'aafiyah in every part of your life [page:1].</li>
+                <li class="wish-item">Your life is a gift, Alhamdulillah for each moment [web:1].</li>
+                <li class="wish-item">May this new year be a journey toward Allah’s pleasure [page:1].</li>
+                <li class="wish-item">Allahumma atina fid-dunya hasanatan wa fil-akhirati hasanah - Good in this world and the Hereafter [page:1].</li>
+                <li class="wish-item">May Allah make you among the righteous and grant Jannah [web:1][page:1].</li>
+                <li class="wish-item">Stay blessed with noor, iman, and endless barakah, Noor Fatima! 🌟</li>
+            </ul>
+        </div>
+    </div>
+
+    <script>
+        const birthday = new Date(new Date().getFullYear(), 0, 15); // Jan 15 current year
+        if (new Date() > birthday) {
+            birthday.setFullYear(birthday.getFullYear() + 1); // Next year if passed
+        }
+
+        function updateCountdown() {
+            const now = new Date().getTime();
+            const distance = birthday.getTime() - now;
+
+            const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+            document.getElementById('days').textContent = days.toString().padStart(2, '0');
+            document.getElementById('hours').textContent = hours.toString().padStart(2, '0');
+            document.getElementById('minutes').textContent = minutes.toString().padStart(2, '0');
+            document.getElementById('seconds').textContent = seconds.toString().padStart(2, '0');
+
+            if (distance < 0) {
+                document.getElementById('countdown').innerHTML = '<div style="grid-column:1/-1; text-align:center; color:#ffd700; font-size:2em;"><i class="fas fa-gift"></i> Happy Birthday Noor Fatima! May Allah bless you abundantly! <i class="fas fa-gift"></i></div>';
+            }
+        }
+
+        updateCountdown();
+        setInterval(updateCountdown, 1000);
+
+        // Animate wishes on load
+        document.querySelectorAll('.wish-item').forEach((el, i) => {
+            el.style.animationDelay = `${0.1 * (i + 1)}s`;
+        });
+    </script>
+</body>
+</html>
