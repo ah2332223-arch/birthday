@@ -10,23 +10,28 @@
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body {
             font-family: 'Poppins', sans-serif;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 50%, #f093fb 100%);
+            /* Maroon Gradient Background */
+            background: linear-gradient(135deg, #4a0404 0%, #800000 50%, #b03030 100%);
             min-height: 100vh;
             overflow-x: hidden;
             position: relative;
+            color: #fff;
         }
         .container { max-width: 800px; margin: 0 auto; padding: 40px 20px; position: relative; z-index: 2; }
         h1 {
             font-family: 'Dancing Script', cursive;
-            font-size: 3.5em;
+            font-size: 3.8em;
             text-align: center;
-            color: #fff;
-            text-shadow: 0 0 20px rgba(255,215,0,0.6);
+            color: #ffd700; /* Gold text */
+            text-shadow: 2px 2px 10px rgba(0,0,0,0.5);
             margin-bottom: 10px;
             animation: glow 2s ease-in-out infinite alternate;
         }
-        @keyframes glow { from { text-shadow: 0 0 20px rgba(255,215,0,0.6); } to { text-shadow: 0 0 30px rgba(255,215,0,0.9), 0 0 40px rgba(255,215,0,0.5); } }
-        .subtitle { font-size: 1.2em; text-align: center; color: #f0f8ff; margin-bottom: 40px; }
+        @keyframes glow { 
+            from { text-shadow: 0 0 10px #ffd700, 0 0 20px #ffcc00; } 
+            to { text-shadow: 0 0 20px #ffd700, 0 0 30px #ff4500; } 
+        }
+        .subtitle { font-size: 1.2em; text-align: center; color: #f0f0f0; margin-bottom: 40px; font-style: italic; }
         .countdown {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
@@ -34,23 +39,23 @@
             margin-bottom: 50px;
         }
         .count-item {
-            background: rgba(255,255,255,0.1);
+            background: rgba(255, 255, 255, 0.1);
             backdrop-filter: blur(10px);
             border-radius: 20px;
             padding: 20px;
             text-align: center;
-            box-shadow: 0 8px 32px rgba(0,0,0,0.2);
-            border: 1px solid rgba(255,255,255,0.2);
+            box-shadow: 0 8px 32px rgba(0,0,0,0.4);
+            border: 1px solid rgba(255,215,0,0.3); /* Gold border */
         }
         .count-num { font-size: 2.2em; font-weight: 700; color: #ffd700; }
-        .count-label { color: #fff; font-size: 0.8em; text-transform: uppercase; }
+        .count-label { color: #fff; font-size: 0.8em; text-transform: uppercase; letter-spacing: 1px; }
         .wishes {
-            background: rgba(255,255,255,0.15);
+            background: rgba(0, 0, 0, 0.2);
             backdrop-filter: blur(15px);
             border-radius: 25px;
             padding: 30px;
-            box-shadow: 0 10px 40px rgba(0,0,0,0.3);
-            border: 1px solid rgba(255,255,255,0.3);
+            box-shadow: 0 10px 40px rgba(0,0,0,0.5);
+            border: 1px solid rgba(255,215,0,0.2);
         }
         .wishes h2 {
             font-family: 'Dancing Script', cursive;
@@ -61,25 +66,25 @@
         }
         .wish-list { list-style: none; display: grid; gap: 15px; }
         .wish-item {
-            background: rgba(255,255,255,0.1);
+            background: rgba(255, 255, 255, 0.05);
             padding: 15px 20px;
             border-radius: 15px;
-            color: #fff;
+            color: #eee;
             border-left: 4px solid #ffd700;
             animation: fadeInUp 0.5s ease forwards;
             opacity: 0;
             font-style: italic;
         }
         @keyframes fadeInUp { to { opacity: 1; transform: translateY(0); } }
-        .heart { position: fixed; top: 20px; right: 20px; font-size: 2em; color: #ff69b4; animation: float 3s ease-in-out infinite; }
+        .heart { position: fixed; top: 20px; right: 20px; font-size: 2em; color: #ffd700; animation: float 3s ease-in-out infinite; }
         @keyframes float { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-10px); } }
     </style>
 </head>
 <body>
-    <div class="heart"><i class="fas fa-heart"></i></div>
+    <div class="heart"><i class="fas fa-star"></i></div>
     <div class="container">
         <h1>Noor Fatima</h1>
-        <p class="subtitle">Your special day is coming! May Allah fill it with barakah and joy 🌸</p>
+        <p class="subtitle">Counting down to your blessed day! May Allah's Noor shine upon you 🌸</p>
         
         <div class="countdown" id="countdown">
             <div class="count-item"><div class="count-num" id="days">00</div><div class="count-label">Days</div></div>
@@ -89,22 +94,20 @@
         </div>
 
         <div class="wishes">
-            <h2><i class="fas fa-hand-holding-heart"></i> Duas for You</h2>
+            <h2><i class="fas fa-heart"></i> Special Duas</h2>
             <ul class="wish-list">
-                <li class="wish-item">May Allah bless you and your family with barakah, peace, and happiness.</li>
-                <li class="wish-item">Allahumma barik laha fi umriha - May Allah bless you in your age and life.</li>
-                <li class="wish-item">May Allah grant you health, prosperity, and heartfelt joy.</li>
-                <li class="wish-item">May your heart always stay filled with Iman and pure Light.</li>
-                <li class="wish-item">May Allah protect your heart, mind, and soul from all evil.</li>
-                <li class="wish-item">May Allah keep us together always Ameeen.</li>
-                <li class="wish-item">May this year be a beautiful journey toward Allah’s pleasure.</li>
-                <li class="wish-item">Stay blessed with Noor, Iman, and endless Barakah, Noor Fatima! 🌟</li>
+                <li class="wish-item">May Allah bless you with endless barakah and happiness.</li>
+                <li class="wish-item">Allahumma barik laha fi umriha - May Allah grant you a long and blessed life.</li>
+                <li class="wish-item">May your heart always be filled with the Noor of Iman.</li>
+                <li class="wish-item">May Allah protect you and grant you success in both worlds.</li>
+                <li class="wish-item">May every dua you make be accepted on your special day.</li>
+                <li class="wish-item">Stay blessed and always keep smiling, Noor Fatima! 🌟</li>
             </ul>
         </div>
     </div>
 
     <script>
-        const birthday = new Date(2026, 0, 15); // January 15, 2026
+        const birthday = new Date(2026, 0, 15);
         function updateCountdown() {
             const now = new Date().getTime();
             const distance = birthday.getTime() - now;
@@ -119,7 +122,7 @@
             document.getElementById('seconds').textContent = seconds.toString().padStart(2, '0');
 
             if (distance < 0) {
-                document.getElementById('countdown').innerHTML = '<h2 style="color:#ffd700; font-size: 2em;">Happy Birthday Noor Fatima! 🎉</h2>';
+                document.getElementById('countdown').innerHTML = '<h2 style="color:#ffd700; font-size: 2em; text-align:center;">Happy Birthday Noor Fatima! 🎉</h2>';
             }
         }
         setInterval(updateCountdown, 1000);
